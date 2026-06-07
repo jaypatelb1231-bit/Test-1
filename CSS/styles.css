@@ -51,7 +51,6 @@ nav {
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none;
 }
 .btn-version:hover { background: rgba(0,212,255,0.2); }
 .hero {
