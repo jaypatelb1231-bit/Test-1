@@ -273,4 +273,21 @@ footer {
   .contact-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 32px; }
   .version-card { flex-direction: column; }
+}@media (max-width: 480px) {
+  nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .hero { padding: 80px 16px 40px; }
+  .hero h1 { font-size: 36px; }
+  .hero-sub { font-size: 15px; }
+  .hero-stats { gap: 24px; margin-top: 40px; }
+  .stat h2 { font-size: 28px; }
+  .section { padding: 60px 16px; }
+  .section-title { font-size: 28px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .calc-card { padding: 24px 16px; }
+  .version-card { flex-direction: column; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-outline { width: 100%; text-align: center; }
 }
