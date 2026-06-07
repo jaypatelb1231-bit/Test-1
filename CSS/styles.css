@@ -1,43 +1,170 @@
+/* Base */
+:root {
+  --bg: #0f1226;
+  --bg-accent: #14183a;
+  --card: #111735;
+  --text: #e6e9f2;
+  --muted: #a9b0c7;
+  --primary: #00d4ff;
+  --primary-700: #00b0d4;
+  --primary-900: #0086a3;
+  --accent: #ff6b6b;
+  --glow: 0 0 24px rgba(0, 212, 255, 0.35);
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
 body {
-    background-color: #1a1a2e;
-    color: white;
-    font-family: Arial;
-    text-align: center;
-    padding: 50px;
-    margin: 0;
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(0,212,255,0.08), transparent 60%),
+    radial-gradient(900px 500px at 110% 20%, rgba(255,107,107,0.08), transparent 60%),
+    linear-gradient(180deg, #0b0f22, var(--bg));
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
 }
-h1 { color: #00d4ff; font-size: 50px; }
-h2 { color: #ff6b6b; }
-p  { color: #aaaaaa; font-size: 18px; }
+
+/* Container */
+.container {
+  width: min(680px, 92vw);
+  text-align: center;
+}
+
+/* Typography */
+h1 {
+  color: var(--primary);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: 0.4px;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 20px rgba(0,212,255,0.25);
+}
+
+h2 {
+  color: var(--accent);
+  font-size: clamp(20px, 3.2vw, 28px);
+  margin: 0 0 22px;
+  font-weight: 600;
+}
+
+p {
+  color: var(--muted);
+  font-size: clamp(16px, 2.4vw, 18px);
+  line-height: 1.7;
+  margin: 0 0 26px;
+}
+
+/* Card */
 .card {
-    background-color: #16213e;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 400px;
+  background: linear-gradient(180deg, var(--card), var(--bg-accent));
+  border-radius: var(--radius);
+  padding: 26px;
+  margin: 30px auto 0;
+  width: 100%;
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
 }
+
+/* Inputs */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
 input {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
-    width: 150px;
-    font-size: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  width: min(220px, 44vw);
+  font-size: 16px;
+  color: var(--text);
+  background: rgba(255,255,255,0.03);
+  box-shadow: inset 0 0 0 9999px rgba(255,255,255,0.01);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.08s ease;
+  outline: none;
 }
+
+input::placeholder {
+  color: #7f89a8;
+}
+
+input:focus {
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 0 0 4px rgba(0,212,255,0.12), var(--glow);
+  transform: translateY(-1px);
+}
+
+/* Button */
 button {
-    padding: 10px 20px;
-    background-color: #00d4ff;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 12px 22px;
+  background: linear-gradient(180deg, var(--primary), var(--primary-700));
+  color: #061018;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 10px 24px rgba(0,212,255,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
 }
+
 button:hover {
-    background-color: #0099bb;
+  filter: brightness(1.05);
+  box-shadow: 0 12px 28px rgba(0,212,255,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
+  transform: translateY(-1px);
 }
+
+button:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+/* Result */
 #result {
-    font-size: 24px;
-    color: #00d4ff;
-    margin-top: 10px;
+  font-size: clamp(20px, 3vw, 26px);
+  color: var(--primary);
+  margin-top: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 18px rgba(0,212,255,0.25);
+}
+
+/* Small details */
+.separator {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  margin: 18px 0;
+  border-radius: 999px;
+}
+
+/* Accessibility: focus visible */
+:focus-visible {
+  outline: 3px solid rgba(0,212,255,0.5);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
