@@ -3,6 +3,7 @@
 <head>
     <title>Jay Patel</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -31,7 +32,7 @@
 
     <div class="card">
         <h2>📞 Contact</h2>
-        <p>📧 jaypatelb1231@gmail.com</p>
+        <p>📧 jaypatelb2912@gmail.com</p>
     </div>
 
     <div class="card">
@@ -49,6 +50,8 @@
 
 </div>
 <script>
+    emailjs.init("71fKu9rfxEurxNaUG");
+
     function calculate() {
         var driver = document.getElementById("driver").value;
         var driven = document.getElementById("driven").value;
@@ -65,16 +68,32 @@
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
+
         if (name == "" || email == "" || message == "") {
             document.getElementById("feedback-result").innerHTML =
                 "⚠️ Please fill all fields!";
             return;
         }
-        document.getElementById("feedback-result").innerHTML =
-            "✅ Thank you " + name + "! Your feedback has been received!";
-        document.getElementById("name").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("message").value = "";
+
+        document.getElementById("feedback-result").innerHTML = "📨 Sending...";
+
+        emailjs.send("service_00qa11i", "template_26w9muk", {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_email: "jaypatelb2912@gmail.com"
+        })
+        .then(function() {
+            document.getElementById("feedback-result").innerHTML =
+                "✅ Thank you " + name + "! Message sent!";
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch(function(error) {
+            document.getElementById("feedback-result").innerHTML =
+                "❌ Error! Please try again.";
+        });
     }
 </script>
 </body>
