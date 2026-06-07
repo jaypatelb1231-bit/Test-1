@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Maruti Engineering Service</title>
+    <title>Maruti Engineering Limited</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
@@ -10,12 +11,13 @@
 <nav>
     <div class="nav-container">
         <div class="logo">⚙️ Maruti Engineering</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#experience">Experience</a>
-            <a href="#calculator">Tools</a>
-            <a href="#contact">Contact</a>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navMenu">
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#experience" onclick="closeMenu()">Experience</a>
+            <a href="#calculator" onclick="closeMenu()">Tools</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
             <a href="version-history.html" target="_blank" class="btn-version">📋 Updates</a>
         </div>
     </div>
@@ -24,7 +26,7 @@
 <section class="hero">
     <div class="hero-content">
         <p class="hero-tag">Professional Engineering Services</p>
-        <h1>Maruti<br>Engineering<br>Service</h1>
+        <h1>Maruti<br>Engineering<br>Limited</h1>
         <p class="hero-sub">Precision Mechanical Design Solutions — CAD, SolidWorks, AutoCAD, BOM & Digital Twin Services</p>
         <div class="hero-buttons">
             <a href="#services" class="btn-primary">Our Services</a>
@@ -42,7 +44,7 @@
     <div class="container">
         <div class="section-tag">About Us</div>
         <h2 class="section-title">Founded by<br>Jay Patel</h2>
-        <p class="section-text">Maruti Engineering Service is founded by Jay Patel, a certified Mechanical Designer with 5+ years of experience at Maestro Digital Mine and a part-time professor at Cambrian College. We deliver precision mechanical design solutions to clients worldwide.</p>
+        <p class="section-text">Maruti Engineering Limited is founded by Jay Patel, a certified Mechanical Designer with 5+ years of experience at Maestro Digital Mine and a part-time professor at Cambrian College. We deliver precision mechanical design solutions to clients worldwide.</p>
         <div class="about-cards">
             <div class="about-card">
                 <div class="about-icon">🎓</div>
@@ -89,7 +91,7 @@
             <div class="skill-card">
                 <div class="skill-icon">🖥️</div>
                 <h3>Digital Twin</h3>
-                <p>Digital twin development for marketing, training and production planning</p>
+                <p>Digital twin development for marketing, training and production</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">⚙️</div>
@@ -180,7 +182,7 @@
             <div class="contact-info">
                 <div class="contact-item"><span>📍</span><p>Greater Sudbury, Ontario, Canada</p></div>
                 <div class="contact-item"><span>📧</span><p>jaypatelb2912@gmail.com</p></div>
-                <div class="contact-item"><span>💼</span><p>Maruti Engineering Service</p></div>
+                <div class="contact-item"><span>💼</span><p>Maruti Engineering Limited</p></div>
                 <div class="contact-item"><span>🔗</span><p>linkedin.com/in/jay-patel-1410b6221</p></div>
             </div>
             <div class="feedback-form">
@@ -195,11 +197,21 @@
 </section>
 
 <footer>
-    <p>© 2026 Maruti Engineering Service — Founded by Jay Patel | Greater Sudbury, Ontario, Canada</p>
+    <p>© 2026 Maruti Engineering Limited — Founded by Jay Patel | Greater Sudbury, Ontario, Canada</p>
 </footer>
 
 <script>
     emailjs.init("71fKu9rfxEurxNaUG");
+
+    function toggleMenu() {
+        var menu = document.getElementById("navMenu");
+        menu.classList.toggle("open");
+    }
+
+    function closeMenu() {
+        var menu = document.getElementById("navMenu");
+        menu.classList.remove("open");
+    }
 
     function calculate() {
         var driver = document.getElementById("driver").value;
