@@ -5,9 +5,12 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+<div class="container">
+
     <h1>Jay Patel</h1>
     <h2>⚙️ Mechanical Designer</h2>
     <p>📍 Vadodara, Gujarat, India</p>
+
     <div class="card">
         <h2>🔧 My Skills</h2>
         <p>✅ CAD Design</p>
@@ -15,32 +18,64 @@
         <p>✅ AutoCAD</p>
         <p>✅ HTML & Git</p>
     </div>
+
     <div class="card">
         <h2>🧮 Gear Ratio Calculator</h2>
-        <p>Driver Teeth:</p>
-        <input type="number" id="driver" placeholder="Example: 20"/>
-        <p>Driven Teeth:</p>
-        <input type="number" id="driven" placeholder="Example: 60"/>
-        <br/>
-        <button onclick="calculate()">Calculate!</button>
+        <div class="form-row">
+            <input type="number" id="driver" placeholder="Driver Teeth: 20"/>
+            <input type="number" id="driven" placeholder="Driven Teeth: 60"/>
+        </div>
+        <button onclick="calculate()">⚙️ Calculate!</button>
         <div id="result"></div>
     </div>
+
     <div class="card">
         <h2>📞 Contact</h2>
         <p>📧 jaypatelb1231@gmail.com</p>
     </div>
-    <script>
-        function calculate() {
-            var driver = document.getElementById("driver").value;
-            var driven = document.getElementById("driven").value;
-            if (driver == "" || driven == "") {
-                document.getElementById("result").innerHTML = "⚠️ Please enter both values!";
-                return;
-            }
-            var ratio = driven / driver;
-            document.getElementById("result").innerHTML =
-                "⚙️ Gear Ratio = " + ratio.toFixed(2) + " : 1";
+
+    <div class="card">
+        <h2>💬 Feedback</h2>
+        <div class="form-row">
+            <input type="text" id="name" placeholder="Your Name"/>
+            <input type="email" id="email" placeholder="Your Email"/>
+        </div>
+        <div class="form-row">
+            <input type="text" id="message" placeholder="Your Message" style="width:100%"/>
+        </div>
+        <button onclick="submitFeedback()">📨 Send Feedback</button>
+        <div id="feedback-result"></div>
+    </div>
+
+</div>
+<script>
+    function calculate() {
+        var driver = document.getElementById("driver").value;
+        var driven = document.getElementById("driven").value;
+        if (driver == "" || driven == "") {
+            document.getElementById("result").innerHTML = "⚠️ Please enter both values!";
+            return;
         }
-    </script>
+        var ratio = driven / driver;
+        document.getElementById("result").innerHTML =
+            "⚙️ Gear Ratio = " + ratio.toFixed(2) + " : 1";
+    }
+
+    function submitFeedback() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        if (name == "" || email == "" || message == "") {
+            document.getElementById("feedback-result").innerHTML =
+                "⚠️ Please fill all fields!";
+            return;
+        }
+        document.getElementById("feedback-result").innerHTML =
+            "✅ Thank you " + name + "! Your feedback has been received!";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+    }
+</script>
 </body>
 </html>
