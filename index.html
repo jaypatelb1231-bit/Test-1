@@ -1,54 +1,149 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jay Patel</title>
+    <title>Jay Patel - Mechanical Designer</title>
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
-<div class="container">
 
-    <h1>Jay Patel</h1>
-    <h2>⚙️ Mechanical Designer</h2>
-    <p>📍 Vadodara, Gujarat, India</p>
-
-    <div class="card">
-        <h2>🔧 My Skills</h2>
-        <p>✅ CAD Design</p>
-        <p>✅ SolidWorks</p>
-        <p>✅ AutoCAD</p>
-        <p>✅ HTML & Git</p>
-    </div>
-
-    <div class="card">
-        <h2>🧮 Gear Ratio Calculator</h2>
-        <div class="form-row">
-            <input type="number" id="driver" placeholder="Driver Teeth: 20"/>
-            <input type="number" id="driven" placeholder="Driven Teeth: 60"/>
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <div class="logo">⚙️ Jay Patel</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#calculator">Calculator</a>
+            <a href="#contact">Contact</a>
         </div>
-        <button onclick="calculate()">⚙️ Calculate!</button>
-        <div id="result"></div>
     </div>
+</nav>
 
-    <div class="card">
-        <h2>📞 Contact</h2>
-        <p>📧 jaypatelb2912@gmail.com</p>
-    </div>
-
-    <div class="card">
-        <h2>💬 Feedback</h2>
-        <div class="form-row">
-            <input type="text" id="name" placeholder="Your Name"/>
-            <input type="email" id="email" placeholder="Your Email"/>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-tag">Mechanical Designer</p>
+        <h1>Engineering<br>Excellence</h1>
+        <p class="hero-sub">Designing precision mechanical solutions with expertise in CAD, SolidWorks and AutoCAD</p>
+        <div class="hero-buttons">
+            <a href="#calculator" class="btn-primary">Try Calculator</a>
+            <a href="#contact" class="btn-outline">Contact Me</a>
         </div>
-        <div class="form-row">
-            <input type="text" id="message" placeholder="Your Message" style="width:100%"/>
-        </div>
-        <button onclick="submitFeedback()">📨 Send Feedback</button>
-        <div id="feedback-result"></div>
     </div>
+    <div class="hero-stats">
+        <div class="stat">
+            <h2>5+</h2>
+            <p>Years Experience</p>
+        </div>
+        <div class="stat">
+            <h2>50+</h2>
+            <p>Projects Done</p>
+        </div>
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Dedication</p>
+        </div>
+    </div>
+</section>
 
-</div>
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-tag">About Me</div>
+        <h2 class="section-title">Mechanical Designer<br>based in Vadodara</h2>
+        <p class="section-text">I am a passionate Mechanical Designer working at GSS with expertise in CAD design, SolidWorks and AutoCAD. Currently expanding my skills into software development to build powerful engineering tools.</p>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section section-dark">
+    <div class="container">
+        <div class="section-tag">Expertise</div>
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">📐</div>
+                <h3>CAD Design</h3>
+                <p>Professional 2D and 3D mechanical design</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔧</div>
+                <h3>SolidWorks</h3>
+                <p>Advanced 3D modeling and simulation</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📏</div>
+                <h3>AutoCAD</h3>
+                <p>Precision technical drawing and drafting</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3>Coding</h3>
+                <p>HTML, CSS, JavaScript and Python</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Calculator Section -->
+<section id="calculator" class="section">
+    <div class="container">
+        <div class="section-tag">Engineering Tool</div>
+        <h2 class="section-title">Gear Ratio Calculator</h2>
+        <div class="calc-card">
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Driver Teeth</label>
+                    <input type="number" id="driver" placeholder="Example: 20"/>
+                </div>
+                <div class="input-group">
+                    <label>Driven Teeth</label>
+                    <input type="number" id="driven" placeholder="Example: 60"/>
+                </div>
+            </div>
+            <button onclick="calculate()">⚙️ Calculate Ratio</button>
+            <div id="result"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section section-dark">
+    <div class="container">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <p>Vadodara, Gujarat, India</p>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <p>jaypatelb2912@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <p>GSS Company</p>
+                </div>
+            </div>
+            <div class="feedback-form">
+                <input type="text" id="name" placeholder="Your Name"/>
+                <input type="email" id="email" placeholder="Your Email"/>
+                <textarea id="message" placeholder="Your Message" rows="4"></textarea>
+                <button onclick="submitFeedback()">📨 Send Message</button>
+                <div id="feedback-result"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Jay Patel — Mechanical Designer | Vadodara, India</p>
+</footer>
+
 <script>
     emailjs.init("71fKu9rfxEurxNaUG");
 
@@ -68,15 +163,12 @@
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var message = document.getElementById("message").value;
-
         if (name == "" || email == "" || message == "") {
             document.getElementById("feedback-result").innerHTML =
                 "⚠️ Please fill all fields!";
             return;
         }
-
         document.getElementById("feedback-result").innerHTML = "📨 Sending...";
-
         emailjs.send("service_00qa11i", "template_26w9muk", {
             from_name: name,
             from_email: email,
@@ -90,7 +182,7 @@
             document.getElementById("email").value = "";
             document.getElementById("message").value = "";
         })
-        .catch(function(error) {
+        .catch(function() {
             document.getElementById("feedback-result").innerHTML =
                 "❌ Error! Please try again.";
         });
