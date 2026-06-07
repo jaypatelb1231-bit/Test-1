@@ -1,0 +1,43 @@
+body {
+    background-color: #1a1a2e;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+}
+h1 { color: #00d4ff; font-size: 50px; }
+h2 { color: #ff6b6b; }
+p  { color: #aaaaaa; font-size: 18px; }
+.card {
+    background-color: #16213e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 400px;
+}
+input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+    font-size: 16px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #00d4ff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0099bb;
+}
+#result {
+    font-size: 24px;
+    color: #00d4ff;
+    margin-top: 10px;
+}
