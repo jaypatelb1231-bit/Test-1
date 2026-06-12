@@ -211,7 +211,22 @@ nav {
 .skill-card p { color: var(--muted); font-size: 14px; }
 
 /* TIMELINE */
+.changelog-section { padding-top: 124px; }
 .timeline { margin-top: 48px; display: flex; flex-direction: column; gap: 20px; }
+.latest-tag {
+  display: inline-block;
+  vertical-align: middle;
+  background: rgba(0,212,255,0.12);
+  color: var(--primary);
+  border: 1px solid rgba(0,212,255,0.25);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
 .version-card {
   display: flex;
   gap: 20px;
